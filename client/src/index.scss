@@ -1,0 +1,11 @@
+
+$primary: #900;
+$enable-shadows: true;
+$prefix: "mo-";
+
+// Then import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body {
+    background-color: rgb(241 245 249);
+  }
