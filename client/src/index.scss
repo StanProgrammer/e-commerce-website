@@ -5,6 +5,7 @@ $prefix: "mo-";
 
 // Then import Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import 'react-toastify/dist/ReactToastify.css';
 
 body {
     background-color: rgb(241 245 249);

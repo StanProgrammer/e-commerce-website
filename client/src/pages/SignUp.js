@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import { FaRegUserCircle, FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaEye, FaEyeSlash,FaRegUserCircle } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 import '../styles/SignUp.scss';
+import axios from 'axios';
+import SummaryApi from '../comman';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    photo: null
+    confirmPassword: ''
   });
-
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState('');
@@ -32,55 +34,41 @@ const SignUp = () => {
     }));
   };
 
-  const handleFileChange = (e) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      photo: e.target.files[0]
-    }));
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
       setError('Passwords do not match');
       return;
     }
     setError('');
-    // Add your signup logic here
+    try {
+      const userCreate = await axios.post(SummaryApi.signup, {
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+      });
+
+      toast.success(userCreate.data.message);
+      navigate('/login');
+    } catch (err) {
+      console.error(err);
+
+      if (err.response && err.response.status === 409) {
+        toast.error(err.response.data.message);
+      } else {
+        toast.error('Error creating user');
+      }
+    }
   };
 
   return (
     <div className="signup-page d-flex justify-content-center align-items-center mt-2">
       <div className="card p-4 shadow-lg">
-        <div className="text-center ">
+        <div className="text-center">
+          <FaRegUserCircle size={50}/>
           <h3>Sign Up</h3>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="text-center mb-3">
-            {formData.photo ? (
-              <img 
-                src={URL.createObjectURL(formData.photo)} 
-                alt="User Avatar" 
-                className="rounded-circle" 
-                width={100} 
-                height={100} 
-              />
-            ) : (
-              <FaRegUserCircle size={50} className="mb-3" />
-            )}
-            <div>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleFileChange}
-                id="photo-upload"
-                style={{ display: 'none' }}
-              />
-              <label htmlFor="photo-upload" className="btn btn-outline-primary">
-                Upload Photo
-              </label>
-            </div>
-          </div>
           <div className="form-group mb-3">
             <label htmlFor="name">Name</label>
             <input

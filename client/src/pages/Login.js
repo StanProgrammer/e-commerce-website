@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../styles/Login.scss';
 import { FaRegUserCircle, FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
+import axios from 'axios';
+import SummaryApi from '../comman';
+import { toast } from 'react-toastify';
+import Context from '../context';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate()
+  const userContext = useContext(Context)
   const [data, setData] = useState({
     email: "",
     password: ""
@@ -21,9 +27,30 @@ const Login = () => {
       [name]: value
     }));
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  }
+    try {
+      const userLogin = await axios.post(SummaryApi.signin, {
+        email: data.email,
+        password: data.password,
+      }, {
+        withCredentials: true
+      });
+    
+      toast.success(userLogin.data.message);
+      navigate('/');
+      useContext.fetchUserDetails()
+    } catch (err) {
+      console.error(err);
+      console.log(err.response.status);
+      if(err.response.status === 401){
+        toast.error(err.response.data.message);
+      }
+      else{
+      toast.error('Error Logging in');
+      }
+    }
+  };
   return (
     <div className="login-page d-flex justify-content-center align-items-center mt-2">
       <div className="card p-4 shadow-lg">
