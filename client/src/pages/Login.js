@@ -1,9 +1,86 @@
-import React from 'react'
+import React, { useState } from 'react';
+import '../styles/Login.scss';
+import { FaRegUserCircle, FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-  return (
-    <div>Login</div>
-  )
-}
+  const [showPassword, setShowPassword] = useState(false);
+  const [data, setData] = useState({
+    email: "",
+    password: ""
+  });
 
-export default Login
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+    setData((prev) => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
+  return (
+    <div className="login-page d-flex justify-content-center align-items-center mt-2">
+      <div className="card p-4 shadow-lg">
+        <div className="text-center mb-4">
+          <FaRegUserCircle size={50} className="mb-3" />
+          <h2>Login</h2>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group mb-3">
+            <label htmlFor="email">Email address</label>
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              name="email"
+              placeholder="Enter email"
+              value={data.email}
+              onChange={handleOnChange}
+              required
+            />
+          </div>
+          <div className="form-group mb-3">
+            <label htmlFor="password">Password</label>
+            <div className="input-group">
+              <input
+                type={showPassword ? "text" : "password"}
+                className="form-control"
+                id="password"
+                name="password"
+                placeholder="Password"
+                value={data.password}
+                onChange={handleOnChange}
+                required
+              />
+              <div className="input-group-append">
+                <button
+                  type="button"
+                  className="btn"
+                  onClick={togglePasswordVisibility}
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
+            </div>
+          </div>
+          <button type="submit" className="btn btn-primary w-100">Submit</button>
+        </form>
+        <div className="text-center mt-3">
+          <Link to={'/forgot-password'} className="text-primary forgot-password">Forgot password?</Link>
+        </div>
+        <div className="text-center mt-3">
+          <span>Don't have an account? </span>
+          <Link to={'/sign-up'} className="text-primary sign-up">Sign up</Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Login;

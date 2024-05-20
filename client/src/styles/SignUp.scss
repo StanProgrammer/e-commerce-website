@@ -1,0 +1,45 @@
+.signup-page {
+    background-color: #f0f2f5;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .card h2 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    font-weight: bold;
+  }
+  
+  .text-primary {
+    color: #007bff !important;
+  
+    &:hover {
+      color: #ff0000 !important; /* Change to red on hover */
+    }
+  }
+  
+  .btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+  
+    &:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+  }
+  
+  .rounded-circle {
+    object-fit: cover;
+  }
+  

@@ -1,0 +1,16 @@
+.footer-class{
+    display: flex;
+    height: 5vh;
+}
+.footer {
+    background-color: #007bff !important; // Adjust the color as needed
+    color: #ffffff; // Adjust the text color as needed
+    padding: 1rem 0;
+  }
+  
+  .footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

@@ -25,7 +25,7 @@ const Navbar = () => {
           </div>
           <div className="cart-icon position-relative">
             <FaShoppingCart />
-            <div className="bg-danger text-white rounded-circle position-absolute top-0 start-100 translate-middle p-1 d-flex align-items-center justify-content-center ecillpse-class">
+            <div className="text-white rounded-circle position-absolute top-0 start-100 translate-middle p-1 d-flex align-items-center justify-content-center ecillpse-class">
               <span className="small ecillpse-font">0</span>
             </div>
           </div>
