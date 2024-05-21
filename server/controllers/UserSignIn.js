@@ -58,12 +58,7 @@ const UserSignIn = async (req, res) => {
         });
 
     } catch (error) {
-        console.log(error);
-        res.status(500).json({
-            message: constants.USR_SIGNIN_ERR,
-            error: true,
-            success: false
-        });
+        throw new Error(error)
     }
 };
 

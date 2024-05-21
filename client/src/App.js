@@ -7,16 +7,20 @@ import { useEffect } from "react";
 import SummaryApi from "./comman";
 import axios from "axios";
 import Context from "./context";
+import { useDispatch } from "react-redux";
+import { setUserDetails } from "./store/userSlice";
 function App() {
+ const dispatch = useDispatch()
   const fetchUserDetails = async()=>{
     const userDetails = await axios.get(SummaryApi.user_details, {
       withCredentials: true
     });
-    console.log(userDetails);
+    dispatch(setUserDetails(userDetails.data.data))
   }
+  
   useEffect(()=>{
-    
     fetchUserDetails();
+    
   },[])
   return (
     <Context.Provider value={{
@@ -25,7 +29,7 @@ function App() {
     <div className="app-container d-flex flex-column min-vh-100">
       <ToastContainer className='toast-position' position='top-center' />
       <Navbar />
-      <main className="main-content container flex-grow-1 mb-3">
+      <main className="main-content flex-grow-1 mb-3">
         <Outlet />
       </main>
       <Footer />

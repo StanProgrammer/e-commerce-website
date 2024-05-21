@@ -1,0 +1,31 @@
+.admin-sidebar {
+    max-width: 250px;
+    min-height: 100vh;
+    .user-icon {
+      svg {
+        color: #007bff;
+      }
+      span {
+        font-size: 1.2rem;
+      }
+    }
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      color: #333;
+      font-size: 1rem;
+      text-decoration: none;
+      &:hover {
+        background-color: #f8f9fa;
+        color: #007bff;
+      }
+      i {
+        font-size: 1.2rem;
+      }
+    }
+    .nav-item {
+      margin-bottom: 0.5rem;
+    }
+  }
+  

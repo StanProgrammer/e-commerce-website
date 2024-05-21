@@ -39,7 +39,7 @@ const Login = () => {
     
       toast.success(userLogin.data.message);
       navigate('/');
-      useContext.fetchUserDetails()
+      userContext.fetchUserDetails()
     } catch (err) {
       console.error(err);
       console.log(err.response.status);

@@ -8,6 +8,34 @@
   cursor: pointer;
 }
 
+.submenu {
+  top: 100%;
+  right: 0;
+  min-width: 200px;
+  z-index: 1000;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 0;
+  .dropdown-item {
+    padding: 10px 15px;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    &:hover {
+      background-color: #f8f9fa;
+      color: #007bff;
+    }
+  }
+  .dropdown-item svg {
+    margin-right: 10px;
+  }
+}
+
+
+
 .login-button {
   width: 80px; /* Increased width */
 }
