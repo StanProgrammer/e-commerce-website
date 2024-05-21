@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaUserCircle, FaBars } from "react-icons/fa";
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import '../styles/AdminPanel.scss';
 
 const AdminPanel = () => {
@@ -27,7 +27,7 @@ const AdminPanel = () => {
             </Link>
           </li>
           <li className="nav-item mb-3">
-            <Link className="nav-link" to={'product'}>
+            <Link className="nav-link" to={'products'}>
               <i className="bi bi-upload me-2"></i> Upload Product
             </Link>
           </li>
@@ -45,10 +45,9 @@ const AdminPanel = () => {
       </aside>
       <main className='flex-grow-1 p-3'>
         <button className="btn btn-primary d-md-none mb-3" onClick={toggleSidebar}>
-          <FaBars /> Menu
+          <FaBars />
         </button>
-        <h2>Main Content</h2>
-        <p>This is the main content area.</p>
+       <Outlet/>
       </main>
     </div>
   );

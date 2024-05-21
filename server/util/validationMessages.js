@@ -7,6 +7,9 @@ const validationMessages = {
         'string.max': 'name should have a maximum length of {#limit}',
         'any.required': 'name is a required field'
     },
+    id:{
+        'string.pattern.base': 'Invalid ID format'
+    },
     email: {
         'string.base': 'Email should be a type of text',
         'string.empty': 'Email cannot be an empty field',

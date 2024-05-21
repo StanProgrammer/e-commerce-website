@@ -59,6 +59,7 @@ const UserSignIn = async (req, res) => {
 
     } catch (error) {
         throw new Error(error)
+
     }
 };
 

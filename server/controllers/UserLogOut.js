@@ -1,15 +1,17 @@
+const constants = require("../util/constants");
+
 const UserLogOut = (req, res) => {
     try {
-      res.clearCookie('token'); // Corrected method name
+      res.clearCookie('token'); 
       res.json({
-        message: "User logged out successfully",
+        message: constants.USR_LG_OUT_SC,
         error: false,
         success: true,
         data: []
       });
     } catch (error) {
       res.status(500).json({
-        message: "An error occurred during logout",
+        message: constants.USR_LG_OUT_FL,
         error: true,
         success: false,
         data: [],

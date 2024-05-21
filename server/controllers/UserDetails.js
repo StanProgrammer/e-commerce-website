@@ -1,17 +1,18 @@
 const userModel = require('../models/userModel');
+const constants = require('../util/constants');
 
 const UserDetails = async (req, res) => {
   try {
-    console.log('User Details');
+    
     const userId = req.user.id;
-    console.log(userId);
+    
 
     // Fetch the user details from the database
     const user = await userModel.findById(userId).select('-password'); // Exclude the password from the response
 
     if (!user) {
       return res.status(404).json({
-        message: 'User not found',
+        message: constants.USR_NOT_FOUND,
         error: true,
         success: false
       });
@@ -24,6 +25,7 @@ const UserDetails = async (req, res) => {
       success: true
     });
   } catch (error) {
+    // throw new Error(error);
     res.status(400).json({
       message: error.message || error,
       error: true,
