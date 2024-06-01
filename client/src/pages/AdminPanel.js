@@ -13,7 +13,8 @@ const AdminPanel = () => {
   };
 
   return (
-    <div className='d-flex w-100 min-vh-100 bg-light'>
+    <div className='admin-panel'>
+    <div className='d-flex bg-light admin-container'>
       <aside className={`bg-white d-flex flex-column p-3 shadow-sm admin-sidebar ${isSidebarVisible ? 'd-block' : 'd-none d-md-flex'}`}>
         <div className='user-icon d-flex flex-column align-items-center mb-4'>
           <FaUserCircle size={50} className='mb-2' />
@@ -43,12 +44,13 @@ const AdminPanel = () => {
           </li>
         </ul>
       </aside>
-      <main className='flex-grow-1 p-3'>
+      <main className='p-3 overflow-auto main-container'>
         <button className="btn btn-primary d-md-none mb-3" onClick={toggleSidebar}>
           <FaBars />
         </button>
        <Outlet/>
       </main>
+    </div>
     </div>
   );
 }

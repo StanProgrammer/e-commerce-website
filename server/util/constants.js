@@ -18,6 +18,15 @@ const constants = {
     USR_UPD_SC: 'User updated successfully',
     USR_DEL_SC: "User deleted successfully",
     USR_DEL_ERR: "Error deleting user",
+    PRD_UP_SC: 'Product uploaded successfully',
+    PRD_UP_FL:'An error occurred while uploading the product',
+    PRD_UPD_SC: 'Product updated successfully',
+    PRD_UPD_FL:'An error occurred while updating the product',
+    PRD_GET_FL:'An error occurred while fetching the products',
+    PRD_GET_SC:"All products retrieved successfully",
+    PRD_DEL_FL:'An error occurred while fetching the products',
+    PRD_DEL_SC:"All products retrieved successfully",
+    PRD_NT_FD:'Product not found'
 };
 
 module.exports = constants;

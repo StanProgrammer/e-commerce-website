@@ -1,0 +1,35 @@
+// src/styles/ProductCard.scss
+.product-card {
+  .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%; // Ensure all cards have the same height
+  }
+
+  .card-img-top {
+    height: 200px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: contain; // Ensure the image fits within the container
+  }
+
+  .product-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 70%; // Adjust as necessary to fit within the card
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn {
+    flex: 1;
+    margin: 0 5px;
+  }
+}

@@ -1,8 +1,8 @@
-const { usrSignInsch } = require('../util/validation');
-const userModel = require('../models/userModel');
+const { usrSignInsch } = require('../../util/validation');
+const userModel = require('../../models/userModel');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const constants = require('../util/constants');
+const constants = require('../../util/constants');
 const { JWT_SECRET } = process.env;
 
 const UserSignIn = async (req, res) => {

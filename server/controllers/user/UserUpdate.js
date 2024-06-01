@@ -1,7 +1,7 @@
-const { usrUpdate } = require("../util/validation");
-const userModel = require("../models/userModel");
+const { usrUpdate } = require("../../util/validation");
+const userModel = require("../../models/userModel");
 const bcrypt = require("bcryptjs");
-const constants = require("../util/constants");
+const constants = require("../../util/constants");
 const UserUpdate = async (req, res) => {
   try {
     const { error, value } = usrUpdate.validate(req.body);

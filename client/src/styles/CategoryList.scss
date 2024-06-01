@@ -1,0 +1,43 @@
+// src/styles/CategoryList.scss
+.category-list {
+    .category-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px; 
+    }
+  
+    .category-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease; // Add transition for smooth zoom effect
+     
+    }
+  
+    .category-img:hover {
+      transform: scale(1.2); // Zoom effect on hover
+      cursor: pointer;
+    }
+  
+    .category-name {
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+  
+    @media (max-width: 768px) {
+      .category-item {
+        margin-bottom: 15px;
+      }
+  
+      .category-img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+  

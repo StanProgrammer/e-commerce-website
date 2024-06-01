@@ -57,7 +57,7 @@ const AllUsers = () => {
   }, []);
 
   return (
-    <div className="all-users-container container mt-5">
+    <div className="all-users-container container">
       <h2 className="mb-4">All Users</h2>
       <div className="table-responsive">
         <table className="table table-bordered table-hover">

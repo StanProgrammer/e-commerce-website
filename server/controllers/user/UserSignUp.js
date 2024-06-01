@@ -1,7 +1,7 @@
-const { usrSignUpsch } = require('../util/validation');
-const userModel = require('../models/userModel');
+const { usrSignUpsch } = require('../../util/validation');
+const userModel = require('../../models/userModel');
 const bcrypt = require('bcryptjs');
-const constants = require('../util/constants');
+const constants = require('../../util/constants');
 const UserSignUp = async (req, res) => {
     try {
         

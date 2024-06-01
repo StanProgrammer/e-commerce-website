@@ -1,6 +1,12 @@
+.admin-panel {
+  max-height: 100vh;
+  .admin-container{
+    max-height: 100vh !important; 
+  }
 .admin-sidebar {
     max-width: 250px;
     min-height: 100vh;
+    height: 100%;
     .user-icon {
       svg {
         color: #007bff;
@@ -27,5 +33,9 @@
     .nav-item {
       margin-bottom: 0.5rem;
     }
+    .main-container{
+      max-height: 100vh !important;
+    }
   }
+}
   

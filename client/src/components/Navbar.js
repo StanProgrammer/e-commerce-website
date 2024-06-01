@@ -63,7 +63,7 @@ const Navbar = () => {
                   <Link to="/profile" className="dropdown-item d-flex align-items-center">
                     <FaUser className="me-2" /> Profile
                   </Link>
-                  <Link to="/admin-panel" className="dropdown-item d-flex align-items-center">
+                  <Link to="/admin-panel/products" className="dropdown-item d-flex align-items-center">
                     <RiAdminLine className="me-2" /> Admin Panel
                   </Link>
                   <Link to="/notifications" className="dropdown-item d-flex align-items-center">
@@ -82,7 +82,7 @@ const Navbar = () => {
           <div className="cart-icon position-relative">
             <FaShoppingCart />
             <div className="text-white rounded-circle position-absolute top-0 start-100 translate-middle p-1 d-flex align-items-center justify-content-center ecillpse-class">
-              <span className="small ecillpse-font">0</span>
+              <span className="xs-small ecillpse-font">0</span>
             </div>
           </div>
           <div>

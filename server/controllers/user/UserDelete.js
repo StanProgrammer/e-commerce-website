@@ -1,5 +1,5 @@
-const userModel = require("../models/userModel");
-const constants = require("../util/constants");
+const userModel = require("../../models/userModel");
+const constants = require("../../util/constants");
 
 const UserDelete = async (req, res) => {
   try {
@@ -39,4 +39,4 @@ const UserDelete = async (req, res) => {
   }
 };
 
-module.exports = { UserDelete };
+module.exports = UserDelete ;

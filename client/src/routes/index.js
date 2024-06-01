@@ -9,6 +9,7 @@ import SignUp from "../pages/SignUp";
 import AdminPanel from "../pages/AdminPanel";
 import AllUsers from "../pages/AllUsers";
 import Products from "../pages/Products";
+import CategoryPage from "../components/CategoryPage";
   const router = createBrowserRouter([
     {
         path:"/",
@@ -22,6 +23,11 @@ import Products from "../pages/Products";
             path:"login",
             element:<Login/>
           },
+          {
+            path:"category-page",
+            element:<CategoryPage/>,
+          },
+          
           {
             path:"forgot-password",
             element:<ForgotPassword/>

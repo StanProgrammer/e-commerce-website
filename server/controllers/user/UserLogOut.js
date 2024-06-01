@@ -1,4 +1,4 @@
-const constants = require("../util/constants");
+const constants = require("../../util/constants");
 
 const UserLogOut = (req, res) => {
     try {

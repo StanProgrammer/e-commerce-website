@@ -29,10 +29,11 @@ function App() {
     <div className="app-container d-flex flex-column min-vh-100">
       <ToastContainer className='toast-position' position='top-center' />
       <Navbar />
-      <main className="main-content flex-grow-1 mb-3">
+      <main className="main-content mb-3 ">
         <Outlet />
+        <Footer />
       </main>
-      <Footer />
+      
     </div>
     </Context.Provider>
   );

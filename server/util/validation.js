@@ -22,4 +22,15 @@ const usrUpdate = Joi.object({
     role: Joi.string().optional()
 });
 
-module.exports ={usrSignUpsch,usrSignInsch,usrUpdate}
+const productSchema = Joi.object({
+    id: Joi.string().optional().pattern(/^[0-9a-fA-F]{24}$/).messages(validationMessages.id),
+    productName: Joi.string().min(3).max(50).required().messages(validationMessages.productName),
+    brandName: Joi.string().min(3).max(50).required().messages(validationMessages.brandName),
+    category: Joi.string().required().messages(validationMessages.category),
+    productImage: Joi.array().items(Joi.string().uri()).min(1).required().messages(validationMessages.productImage),
+    description: Joi.string().required().messages(validationMessages.description),
+    price: Joi.number().required().messages(validationMessages.price),
+    selling: Joi.number().required().messages(validationMessages.selling),
+});
+
+module.exports = { usrSignUpsch, usrSignInsch, usrUpdate, productSchema };

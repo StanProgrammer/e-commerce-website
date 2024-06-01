@@ -1,5 +1,5 @@
-const userModel = require('../models/userModel');
-const constants = require('../util/constants');
+const userModel = require('../../models/userModel');
+const constants = require('../../util/constants');
 
 const AllUsers = async (req, res) => {
   try {
